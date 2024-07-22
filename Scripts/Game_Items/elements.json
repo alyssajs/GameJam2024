@@ -1,0 +1,16 @@
+{
+	"elements":[
+		{
+			"element_name":"Air"
+		},
+		{
+			"element_name":"Earth"
+		},
+		{
+			"element_name":"Fire"
+		},
+		{
+			"element_name":"Water"
+		}
+	]
+}

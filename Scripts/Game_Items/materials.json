@@ -1,0 +1,109 @@
+{
+	"metals": [
+		{
+			"metal_name":"lead",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		}, 
+		{
+			"metal_name":"tin",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		}, 
+		{
+			"metal_name":"iron",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		},
+		{
+			"metal_name":"gold",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		}, 
+		{
+			"metal_name":"copper",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		},
+		{
+			"metal_name":"quicksilver",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		},
+		{
+			"metal_name":"silver",
+			"metal_type":"planetary",
+			"metal_recipe" : {
+				"metals" : [
+					"tin",
+					"iron",
+					"silver"
+				],
+				"elements": [
+					"Fire",
+					"Water"
+				]},
+			"value": 50,
+		}
+	]
+}
