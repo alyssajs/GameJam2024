@@ -11,14 +11,9 @@ config_version=5
 [application]
 
 config/name="game_jam"
-run/main_scene="res://Scenes/start_menu.tscn"
+run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
 
 [input]
 
