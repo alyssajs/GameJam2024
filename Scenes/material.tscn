@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp6ur4r6oxwpm"]
+[gd_scene load_steps=3 format=3 uid="uid://bp6ur4r6oxwpm"]
 
 [ext_resource type="Script" path="res://Scripts/Game_Items/Material.gd" id="1_6hfff"]
-[ext_resource type="Texture2D" uid="uid://cm38oav2vdul7" path="res://icon.svg" id="2_mr36o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_acj6v"]
 radius = 64.0078
@@ -10,7 +9,6 @@ radius = 64.0078
 script = ExtResource("1_6hfff")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_mr36o")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
