@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy1nq8lj77vom"]
+
+[ext_resource type="PackedScene" uid="uid://bftmhdbqhoifg" path="res://Scenes/UI_Components/ChangeSceneComponent.tscn" id="1_j62bd"]
+[ext_resource type="PackedScene" uid="uid://4omj1uscuodi" path="res://Scenes/Game_Items/Diary.tscn" id="2_n0oyb"]
+
+[node name="AlchemyTable" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="R_Go_To_Door" parent="Control/AspectRatioContainer" instance=ExtResource("1_j62bd")]
+position = Vector2(1120, 314)
+scene_to_go_to = "res://Scenes/Main_Scenes/DoorChamber.tscn"
+
+[node name="L_Go_To_Desk" parent="Control/AspectRatioContainer" instance=ExtResource("1_j62bd")]
+position = Vector2(31, 320)
+rotation = 3.14159
+scene_to_go_to = "res://Scenes/Main_Scenes/DeskChamber.tscn"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This is Alchemy Chamber"
+
+[node name="Diary" parent="." instance=ExtResource("2_n0oyb")]
+position = Vector2(293, 201)

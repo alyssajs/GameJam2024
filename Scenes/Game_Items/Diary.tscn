@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://4omj1uscuodi"]
+
+[ext_resource type="Texture2D" uid="uid://c47xg5m73dix3" path="res://Art/diary.png" id="1_ltbfl"]
+[ext_resource type="Script" path="res://Scripts/Game_Items/Diary.gd" id="1_s000a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rokux"]
+size = Vector2(650, 425.532)
+
+[node name="Diary" type="Node2D"]
+script = ExtResource("1_s000a")
+
+[node name="DiarySprite" type="Sprite2D" parent="."]
+position = Vector2(-4, -26)
+scale = Vector2(0.2, 0.188)
+texture = ExtResource("1_ltbfl")
+
+[node name="DiaryArea" type="Area2D" parent="DiarySprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DiarySprite/DiaryArea"]
+position = Vector2(-40, 276.596)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rokux")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0rwwkulpwxgp"]
+
+[ext_resource type="PackedScene" uid="uid://bftmhdbqhoifg" path="res://Scenes/UI_Components/ChangeSceneComponent.tscn" id="1_wxbfs"]
+
+[node name="DoorChamber" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="R_Go_To_Desk" parent="Control" instance=ExtResource("1_wxbfs")]
+position = Vector2(1120, 314)
+scene_to_go_to = "res://Scenes/Main_Scenes/DeskChamber.tscn"
+
+[node name="L_Go_To_Alchemy" parent="Control" instance=ExtResource("1_wxbfs")]
+position = Vector2(31, 320)
+rotation = -3.14159
+scene_to_go_to = "res://Scenes/Main_Scenes/AlchemyChamber.tscn"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 41.0
+offset_bottom = 25.0
+text = "This Is Door Chamber"

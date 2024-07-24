@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bftmhdbqhoifg"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ChangeSceneComponent.gd" id="1_teibm"]
+[ext_resource type="Texture2D" uid="uid://cydlswt7m0jh1" path="res://Art/arrow.png" id="2_14plh"]
+
+[node name="ChangeSceneComponent" type="Node2D"]
+script = ExtResource("1_teibm")
+
+[node name="Change_Scene" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -60.0
+offset_right = 1179.0
+offset_bottom = 1696.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("2_14plh")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Change_Scene" to="." method="_on_change_scene_pressed"]
