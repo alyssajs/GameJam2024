@@ -1,28 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://belsfwaao2yxl"]
+[gd_scene load_steps=4 format=3 uid="uid://belsfwaao2yxl"]
 
-[ext_resource type="PackedScene" uid="uid://bftmhdbqhoifg" path="res://Scenes/UI_Components/ChangeSceneComponent.tscn" id="1_rpsge"]
+[ext_resource type="Texture2D" uid="uid://cpd5wf2almj0h" path="res://Assets/study.png" id="1_gvl2o"]
+[ext_resource type="PackedScene" uid="uid://se0jb35clt5g" path="res://Scenes/UI_Components/Base_UI.tscn" id="2_73pvl"]
+[ext_resource type="PackedScene" uid="uid://4omj1uscuodi" path="res://Scenes/Game_Items/Diary.tscn" id="2_rtucc"]
 
 [node name="DeskChamber" type="Node2D"]
 
-[node name="Control" type="Control" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Background"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 468.0
-offset_bottom = 163.0
-text = "This is Desk Chamber"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="Background/Control"]
+position = Vector2(578, 326)
+scale = Vector2(0.283899, 0.227367)
+texture = ExtResource("1_gvl2o")
 
-[node name="R_Go_To_Alchemy" parent="Control" instance=ExtResource("1_rpsge")]
-position = Vector2(1120, 314)
-scene_to_go_to = "res://Scenes/Main_Scenes/AlchemyChamber.tscn"
+[node name="UI_Canvas" parent="." instance=ExtResource("2_73pvl")]
 
-[node name="L_Go_To_Door" parent="Control" instance=ExtResource("1_rpsge")]
-position = Vector2(31, 320)
-rotation = -3.14159
-scene_to_go_to = "res://Scenes/Main_Scenes/DoorChamber.tscn"
+[node name="Label" parent="UI_Canvas/Control/BoxContainer/Panel" index="0"]
+text = "Chamber of Desk"
+
+[node name="Diary" parent="." instance=ExtResource("2_rtucc")]
+position = Vector2(329, 305)
+
+[editable path="UI_Canvas"]

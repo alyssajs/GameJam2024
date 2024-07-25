@@ -16,3 +16,5 @@ res://Scenes/Game_Items/drop_zone.tscn
 res://Scenes/Main_Scenes/DeskChamber.tscn
 res://Scenes/Main_Scenes/DoorChamber.tscn
 res://Scenes/Game_Items/Diary.tscn
+res://Themes/Header_Label_Theme.tres
+res://Scenes/UI_Components/Base_UI.tscn

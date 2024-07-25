@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0rwwkulpwxgp"]
+[gd_scene load_steps=3 format=3 uid="uid://c0rwwkulpwxgp"]
 
+[ext_resource type="PackedScene" uid="uid://se0jb35clt5g" path="res://Scenes/UI_Components/Base_UI.tscn" id="1_ce62s"]
 [ext_resource type="PackedScene" uid="uid://bftmhdbqhoifg" path="res://Scenes/UI_Components/ChangeSceneComponent.tscn" id="1_wxbfs"]
 
 [node name="DoorChamber" type="Node2D"]
 
+[node name="CanvasLayer" parent="." instance=ExtResource("1_ce62s")]
+
+[node name="L_Go_To_Door" parent="CanvasLayer/Control/BoxContainer/Panel2/Control" index="0"]
+scene_to_go_to = "res://Scenes/Main_Scenes/AlchemyChamber.tscn"
+
+[node name="Label" parent="CanvasLayer/Control/BoxContainer/Panel" index="0"]
+text = "Unsettling Door"
+
+[node name="R_Go_To_Alchemy" parent="CanvasLayer/Control/BoxContainer/Panel3/Control" index="0"]
+scene_to_go_to = "res://Scenes/Main_Scenes/DeskChamber.tscn"
+
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -26,3 +39,6 @@ offset_top = 2.0
 offset_right = 41.0
 offset_bottom = 25.0
 text = "This Is Door Chamber"
+
+[editable path="CanvasLayer"]
+[editable path="CanvasLayer/Control/BoxContainer/Panel2/Control/L_Go_To_Door"]
