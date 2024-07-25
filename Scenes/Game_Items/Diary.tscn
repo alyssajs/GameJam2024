@@ -18,5 +18,4 @@ texture = ExtResource("2_kjt5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DiarySprite/DiaryArea"]
 position = Vector2(4.76837e-07, 3.8147e-06)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rokux")

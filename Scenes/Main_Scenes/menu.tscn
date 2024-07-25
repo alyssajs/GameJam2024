@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://di0jborn1bsap"]
+[gd_scene load_steps=5 format=3 uid="uid://di0jborn1bsap"]
 
 [ext_resource type="Script" path="res://Scripts/StartMenu.gd" id="1_jrl5a"]
+[ext_resource type="Theme" uid="uid://ddd8xy3andc7n" path="res://Themes/button_theme.tres" id="2_dnojc"]
+[ext_resource type="Texture2D" uid="uid://cpd5wf2almj0h" path="res://Assets/study.png" id="2_lpgww"]
+[ext_resource type="Theme" uid="uid://dgqnxpaapqlip" path="res://Themes/Header_Label_Theme.tres" id="3_lw4ci"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,20 +14,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jrl5a")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(567.5, 324.5)
+scale = Vector2(0.286587, 0.22633)
+texture = ExtResource("2_lpgww")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.4
+offset_left = -0.400003
+offset_top = 0.199999
+offset_right = -0.600014
+offset_bottom = -5.2
+grow_horizontal = 2
+theme = ExtResource("3_lw4ci")
+text = "In The Shadow Of Wisdom"
+horizontal_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -52.0
+offset_right = 75.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
+theme = ExtResource("2_dnojc")
 text = "Start"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
+theme = ExtResource("2_dnojc")
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]

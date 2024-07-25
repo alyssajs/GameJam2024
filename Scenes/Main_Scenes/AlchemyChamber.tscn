@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy1nq8lj77vom"]
+[gd_scene load_steps=7 format=3 uid="uid://cy1nq8lj77vom"]
 
 [ext_resource type="Texture2D" uid="uid://cxfl0g167ak8q" path="res://Assets/Alchemy_Desk.png" id="1_n4xk7"]
 [ext_resource type="PackedScene" uid="uid://se0jb35clt5g" path="res://Scenes/UI_Components/Base_UI.tscn" id="3_6t0ui"]
 [ext_resource type="Texture2D" uid="uid://ypx1bs38mgbi" path="res://Assets/flask_thing.png" id="3_ut4wx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pw7y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyq2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gax46"]
 
 [node name="AlchemyTable" type="Node2D"]
 
@@ -35,6 +41,202 @@ text = "Chamber Of Alchemy"
 scene_to_go_to = "res://Scenes/Main_Scenes/DoorChamber.tscn"
 
 [node name="GameUI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="GameUI"]
+layout_mode = 3
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_left = -4.2
+offset_top = -1.8
+offset_right = 6.20003
+offset_bottom = 3.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="GameUI/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Metals" type="Panel" parent="GameUI/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
+
+[node name="ItemList" type="ItemList" parent="GameUI/Control/GridContainer/Metals"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -74.0
+offset_right = 83.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 7
+item_0/text = "Copper"
+item_1/text = "Iron"
+item_2/text = "Lead"
+item_3/text = "Tin"
+item_4/text = "Gold"
+item_5/text = "QuickSilver"
+item_6/text = "Silver"
+
+[node name="Elements" type="Panel" parent="GameUI/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wyq2c")
+
+[node name="Elements_Box_container" type="HBoxContainer" parent="GameUI/Control/GridContainer/Elements"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gax46")
+
+[node name="Button4" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "Air"
+
+[node name="Panel3" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gax46")
+
+[node name="Button" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "Fire"
+
+[node name="Button2" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.658
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.136015
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+text = "Water"
+
+[node name="Panel2" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gax46")
+
+[node name="Button3" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+text = "Earth"
+
+[node name="Empty" type="Panel" parent="GameUI/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
+
+[node name="Compounds" type="Panel" parent="GameUI/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
+
+[node name="ItemList" type="ItemList" parent="GameUI/Control/GridContainer/Compounds"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -74.0
+offset_right = 83.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 10
+item_0/text = "Acid"
+item_1/text = "Sal Ammoniac"
+item_2/text = "Aqua Fortis"
+item_3/text = "Aqua Regia"
+item_4/text = "Spirit Of Wine"
+item_5/text = "Amalgam"
+item_6/text = "Cinnabar"
+item_7/text = "Vinegar"
+item_8/text = "Vitriol"
+item_9/text = "Black Sulfur"
+
+[node name="Alchemize" type="Panel" parent="GameUI/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
+
+[node name="Button" type="Button" parent="GameUI/Control/GridContainer/Alchemize"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.003
+anchor_top = 0.613
+anchor_right = 1.0
+anchor_bottom = 0.88
+offset_left = -0.076
+offset_top = 0.0039897
+offset_right = -1.0
+offset_bottom = 0.039984
+grow_horizontal = 2
+grow_vertical = 2
+text = "Alchemize
+"
+
+[node name="Empty2" type="Panel" parent="GameUI/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
 
 [node name="FlaskThing" type="Sprite2D" parent="."]
 position = Vector2(829, 388)

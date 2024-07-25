@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://ddd8xy3andc7n"]
+
+[resource]
+/font_sizes/Button_theme = 30
+/fonts/Button_theme = null
