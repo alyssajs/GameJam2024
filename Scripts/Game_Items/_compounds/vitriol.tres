@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://c1d4xb5sjp41k"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_j360h"]
+
+[resource]
+script = ExtResource("1_j360h")
+compound_name = "Vitriol"
+compound_enum = 8
+compound_type = 5
+compound_cost = 5.0

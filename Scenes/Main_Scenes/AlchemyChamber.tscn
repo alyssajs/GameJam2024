@@ -1,16 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy1nq8lj77vom"]
+[gd_scene load_steps=11 format=3 uid="uid://cy1nq8lj77vom"]
 
-[ext_resource type="Texture2D" uid="uid://cxfl0g167ak8q" path="res://Assets/Alchemy_Desk.png" id="1_n4xk7"]
+[ext_resource type="Script" path="res://Scenes/Main_Scenes/AlchemyChamber.gd" id="1_at144"]
+[ext_resource type="Texture2D" uid="uid://cxfl0g167ak8q" path="res://Assets/Art/Alchemy_Desk.png" id="1_n4xk7"]
 [ext_resource type="PackedScene" uid="uid://se0jb35clt5g" path="res://Scenes/UI_Components/Base_UI.tscn" id="3_6t0ui"]
-[ext_resource type="Texture2D" uid="uid://ypx1bs38mgbi" path="res://Assets/flask_thing.png" id="3_ut4wx"]
+[ext_resource type="Texture2D" uid="uid://b47fto7w72r4i" path="res://Assets/Art/crucible.png" id="3_hwemh"]
+[ext_resource type="Texture2D" uid="uid://ypx1bs38mgbi" path="res://Assets/Art/flask_thing.png" id="3_ut4wx"]
+[ext_resource type="Texture2D" uid="uid://bb4pyurlnownc" path="res://Assets/Art/m_and_p.png" id="4_gtkil"]
+[ext_resource type="Texture2D" uid="uid://df68r8nq0os1e" path="res://Assets/Art/mixing_bowl.png" id="7_5u4y4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pw7y0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wyq2c"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gax46"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjskh"]
 
 [node name="AlchemyTable" type="Node2D"]
+script = ExtResource("1_at144")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -2
@@ -31,16 +36,32 @@ texture = ExtResource("1_n4xk7")
 [node name="Base_Ui" parent="." instance=ExtResource("3_6t0ui")]
 layer = 3
 
+[node name="Control" parent="Base_Ui" index="0"]
+mouse_filter = 2
+
+[node name="BoxContainer" parent="Base_Ui/Control" index="0"]
+mouse_filter = 2
+
+[node name="Panel2" parent="Base_Ui/Control/BoxContainer" index="0"]
+mouse_filter = 2
+
 [node name="L_Go_To_Door" parent="Base_Ui/Control/BoxContainer/Panel2/Control" index="0"]
 scene_to_go_to = "res://Scenes/Main_Scenes/DeskChamber.tscn"
 
+[node name="Panel" parent="Base_Ui/Control/BoxContainer" index="1"]
+mouse_filter = 2
+
 [node name="Label" parent="Base_Ui/Control/BoxContainer/Panel" index="0"]
 text = "Chamber Of Alchemy"
+
+[node name="Panel3" parent="Base_Ui/Control/BoxContainer" index="2"]
+mouse_filter = 2
 
 [node name="R_Go_To_Alchemy" parent="Base_Ui/Control/BoxContainer/Panel3/Control" index="0"]
 scene_to_go_to = "res://Scenes/Main_Scenes/DoorChamber.tscn"
 
 [node name="GameUI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="GameUI"]
 layout_mode = 3
@@ -54,6 +75,7 @@ offset_right = 6.20003
 offset_bottom = 3.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="GridContainer" type="GridContainer" parent="GameUI/Control"]
 layout_mode = 1
@@ -68,9 +90,10 @@ columns = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
 
-[node name="ItemList" type="ItemList" parent="GameUI/Control/GridContainer/Metals"]
+[node name="metal_list" type="ItemList" parent="GameUI/Control/GridContainer/Metals"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,8 +106,10 @@ offset_right = 83.0
 offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+select_mode = 1
+auto_height = true
 item_count = 7
-item_0/text = "Copper"
+item_0/text = "Copper-Test"
 item_1/text = "Iron"
 item_2/text = "Lead"
 item_3/text = "Tin"
@@ -96,6 +121,7 @@ item_6/text = "Silver"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wyq2c")
 
 [node name="Elements_Box_container" type="HBoxContainer" parent="GameUI/Control/GridContainer/Elements"]
@@ -106,12 +132,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
+[node name="elements_p_1" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gax46")
+mouse_filter = 1
+mouse_default_cursor_shape = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjskh")
 
-[node name="Button4" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel"]
+[node name="Button4" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_1"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 4
@@ -124,12 +152,14 @@ grow_vertical = 2
 size_flags_horizontal = 3
 text = "Air"
 
-[node name="Panel3" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
+[node name="elements_p_2" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gax46")
+mouse_filter = 1
+mouse_default_cursor_shape = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjskh")
 
-[node name="Button" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel3"]
+[node name="Button" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 10
@@ -139,7 +169,7 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 text = "Fire"
 
-[node name="Button2" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel3"]
+[node name="Button2" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = -1
@@ -152,12 +182,14 @@ grow_vertical = 0
 size_flags_horizontal = 3
 text = "Water"
 
-[node name="Panel2" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
+[node name="elements_p_3" type="Panel" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gax46")
+mouse_filter = 1
+mouse_default_cursor_shape = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjskh")
 
-[node name="Button3" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/Panel2"]
+[node name="Button3" type="Button" parent="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_3"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 6
@@ -177,15 +209,17 @@ text = "Earth"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
 
 [node name="Compounds" type="Panel" parent="GameUI/Control/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
 
-[node name="ItemList" type="ItemList" parent="GameUI/Control/GridContainer/Compounds"]
+[node name="compound_list" type="ItemList" parent="GameUI/Control/GridContainer/Compounds"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -198,8 +232,10 @@ offset_right = 83.0
 offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
+select_mode = 1
+auto_height = true
 item_count = 10
-item_0/text = "Acid"
+item_0/text = "Acid -test"
 item_1/text = "Sal Ammoniac"
 item_2/text = "Aqua Fortis"
 item_3/text = "Aqua Regia"
@@ -214,6 +250,7 @@ item_9/text = "Black Sulfur"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
 
 [node name="Button" type="Button" parent="GameUI/Control/GridContainer/Alchemize"]
@@ -236,11 +273,33 @@ text = "Alchemize
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pw7y0")
 
+[node name="crucible" type="Sprite2D" parent="."]
+position = Vector2(835, 372)
+scale = Vector2(0.100328, 0.1)
+texture = ExtResource("3_hwemh")
+
+[node name="mandp" type="Sprite2D" parent="."]
+position = Vector2(322, 369)
+scale = Vector2(0.100328, 0.1)
+texture = ExtResource("4_gtkil")
+
 [node name="FlaskThing" type="Sprite2D" parent="."]
-position = Vector2(829, 388)
+position = Vector2(932, 458)
 scale = Vector2(0.100328, 0.1)
 texture = ExtResource("3_ut4wx")
+
+[node name="mixing_bowl" type="Sprite2D" parent="."]
+position = Vector2(589, 445)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_5u4y4")
+
+[connection signal="item_clicked" from="GameUI/Control/GridContainer/Metals/metal_list" to="." method="_on_metal_list_item_clicked"]
+[connection signal="item_selected" from="GameUI/Control/GridContainer/Metals/metal_list" to="." method="_on_metal_list_item_selected"]
+[connection signal="item_clicked" from="GameUI/Control/GridContainer/Compounds/compound_list" to="." method="_on_compound_list_item_clicked"]
+[connection signal="item_selected" from="GameUI/Control/GridContainer/Compounds/compound_list" to="." method="_on_compound_list_item_selected"]
+[connection signal="pressed" from="GameUI/Control/GridContainer/Alchemize/Button" to="." method="_on_button_pressed"]
 
 [editable path="Base_Ui"]

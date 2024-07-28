@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://d0bv5vmldpewr"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_lhxa3"]
+
+[resource]
+script = ExtResource("1_lhxa3")
+compound_name = "Acid"
+compound_enum = 0
+compound_type = 0
+compound_cost = 5.0

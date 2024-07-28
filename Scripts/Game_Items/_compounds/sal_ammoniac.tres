@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://b3p84deega8rv"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_0qr08"]
+
+[resource]
+script = ExtResource("1_0qr08")
+compound_name = "Sal Ammoniac"
+compound_enum = 1
+compound_type = 1
+compound_cost = 5.0

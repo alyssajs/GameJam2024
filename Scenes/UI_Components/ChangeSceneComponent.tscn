@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bftmhdbqhoifg"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ChangeSceneComponent.gd" id="1_teibm"]
-[ext_resource type="Texture2D" uid="uid://c7nvetiejjoac" path="res://Assets/GoRightButton.png" id="2_0oh0c"]
+[ext_resource type="Texture2D" uid="uid://c7nvetiejjoac" path="res://Assets/Art/GoRightButton.png" id="2_qxox1"]
 
 [node name="ChangeSceneComponent" type="Node2D"]
 script = ExtResource("1_teibm")
@@ -19,7 +19,7 @@ offset_bottom = 1669.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.1, 0.1)
-icon = ExtResource("2_0oh0c")
+icon = ExtResource("2_qxox1")
 flat = true
 icon_alignment = 1
 

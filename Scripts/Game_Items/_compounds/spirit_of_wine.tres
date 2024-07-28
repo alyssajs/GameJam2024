@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://bfnuuu421rlcg"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_hicac"]
+
+[resource]
+script = ExtResource("1_hicac")
+compound_name = "Spirit of Wine"
+compound_enum = 4
+compound_type = 2
+compound_cost = 5.0

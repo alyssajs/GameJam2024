@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4omj1uscuodi"]
 
 [ext_resource type="Script" path="res://Scripts/Game_Items/Diary.gd" id="1_s000a"]
-[ext_resource type="Texture2D" uid="uid://dkfg3droggsrv" path="res://Assets/Journal.png" id="2_kjt5b"]
+[ext_resource type="Texture2D" uid="uid://dkfg3droggsrv" path="res://Assets/Art/Journal.png" id="2_kjt5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rokux"]
 size = Vector2(650, 425.532)

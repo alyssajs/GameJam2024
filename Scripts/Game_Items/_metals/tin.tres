@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Metal" load_steps=2 format=3 uid="uid://q7w472uitotq"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/metal.gd" id="1_6b6ou"]
+
+[resource]
+script = ExtResource("1_6b6ou")
+metal_name = "Tin"
+metal_enum = 1
+metal_type = 0
+metal_cost = 50.0

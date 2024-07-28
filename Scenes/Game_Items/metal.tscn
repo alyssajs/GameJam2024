@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxgm251suss5t"]
 
-[ext_resource type="Script" path="res://Scripts/Game_Items/Metal.gd" id="1_56yih"]
+[ext_resource type="Script" path="res://Scripts/Game_Items/metal_node.gd" id="1_56yih"]
 [ext_resource type="Texture2D" uid="uid://cm38oav2vdul7" path="res://icon.svg" id="2_gjrpr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hsmn"]

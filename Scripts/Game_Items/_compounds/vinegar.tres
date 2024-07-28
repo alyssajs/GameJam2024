@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://dd8mtlnm8lv0p"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_edu4l"]
+
+[resource]
+script = ExtResource("1_edu4l")
+compound_name = "Vinegar"
+compound_enum = 7
+compound_type = 0
+compound_cost = 5.0

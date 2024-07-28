@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://t1fbjlntesu2"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_ik06r"]
+
+[resource]
+script = ExtResource("1_ik06r")
+compound_name = "Black Sulfer"
+compound_enum = 9
+compound_type = 1
+compound_cost = 5.0

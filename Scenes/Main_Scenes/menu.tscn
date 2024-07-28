@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://di0jborn1bsap"]
 
-[ext_resource type="Script" path="res://Scripts/StartMenu.gd" id="1_jrl5a"]
+[ext_resource type="Script" path="res://Scripts/UI/StartMenu.gd" id="1_jrl5a"]
 [ext_resource type="Theme" uid="uid://ddd8xy3andc7n" path="res://Themes/button_theme.tres" id="2_dnojc"]
-[ext_resource type="Texture2D" uid="uid://cpd5wf2almj0h" path="res://Assets/study.png" id="2_lpgww"]
+[ext_resource type="Texture2D" uid="uid://cpd5wf2almj0h" path="res://Assets/Art/study.png" id="2_lpgww"]
 [ext_resource type="Theme" uid="uid://dgqnxpaapqlip" path="res://Themes/Header_Label_Theme.tres" id="3_lw4ci"]
 
 [node name="Menu" type="Control"]

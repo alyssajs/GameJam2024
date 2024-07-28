@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://boela4wae4oo8"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_fsrfi"]
+
+[resource]
+script = ExtResource("1_fsrfi")
+compound_name = "Aqua Fortis"
+compound_enum = 2
+compound_type = 0
+compound_cost = 5.0

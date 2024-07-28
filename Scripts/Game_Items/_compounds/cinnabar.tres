@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Compound" load_steps=2 format=3 uid="uid://bxy4ujhwerimh"]
+
+[ext_resource type="Script" path="res://Scripts/Game_Items/compound.gd" id="1_n4i01"]
+
+[resource]
+script = ExtResource("1_n4i01")
+compound_name = "Cinnabar"
+compound_enum = 6
+compound_type = 4
+compound_cost = 5.0

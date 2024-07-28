@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://dfe8t7x6ugroq"]
+
+[ext_resource type="Resource" uid="uid://d0bv5vmldpewr" path="res://Scripts/Game_Items/_compounds/acid.tres" id="1_uggem"]
+[ext_resource type="Resource" uid="uid://q7w472uitotq" path="res://Scripts/Game_Items/_metals/tin.tres" id="2_ib6op"]
+[ext_resource type="Resource" uid="uid://bt5csxrp2t3ur" path="res://Scripts/Game_Items/_metals/silver.tres" id="3_a1vgm"]
+[ext_resource type="Resource" uid="uid://onq1fheq6gev" path="res://Scripts/Game_Items/_metals/lead.tres" id="4_usltt"]
+[ext_resource type="Script" path="res://Scripts/Game_Items/recipe.gd" id="5_2vjvn"]
+
+[resource]
+script = ExtResource("5_2vjvn")
+recipe_name = "Lead"
+metal_output = ExtResource("4_usltt")
+metal_input = Array[Resource("res://Scripts/Game_Items/metal.gd")]([ExtResource("2_ib6op"), ExtResource("3_a1vgm")])
+compound_input = Array[Resource("res://Scripts/Game_Items/compound.gd")]([ExtResource("1_uggem")])
+element_input = Array[int]([2])
