@@ -4,6 +4,7 @@ class_name Recipe
 
 @export var recipe_name : String
 @export var metal_output : Metal
+@export var compound_output : Compound
 @export var metal_input : Array[Metal]
 @export var compound_input : Array[Compound]
 @export var element_input: Array[AlchemyEnums.Elements]

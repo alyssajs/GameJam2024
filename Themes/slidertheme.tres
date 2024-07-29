@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://k07tdd405yu2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddex8"]
+bg_color = Color(0.105882, 0.247059, 0.0509804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abkpr"]
+bg_color = Color(0.105567, 0.248483, 0.0490931, 1)
+
+[resource]
+HSlider/constants/center_grabber = 1
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber_disabled = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ddex8")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_abkpr")

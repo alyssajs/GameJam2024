@@ -1,6 +1,0 @@
-[gd_resource type="Resource" format=3 uid="uid://qma18s1n1j4y"]
-
-[resource]
-metadata/metals_unlocked = ["Copper"]
-metadata/compounds_unlocked = ["ACID"]
-metadata/recipes_unlocked = []

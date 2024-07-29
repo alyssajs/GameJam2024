@@ -6,12 +6,12 @@ var compounds_folder = "res://Scripts/Game_Items/_compounds/"
 var elements_folder = "res://Scripts/Game_Items/_elements/"
 var metals_folder = "res://Scripts/Game_Items/_metals/"
 var recipes_folder = "res://Scripts/Game_Items/_recipes/"
-var player_save_file = "user://player_save.save"
-var default_player_save = "res://Scripts/player/player_save.gd"
+var player_save_file = "user://player_save.tres"
+var default_player_save = "res://Scripts/player/default_save.tres"
 @export var compounds : Array[Compound]
 @export var metals : Array[Metal]
 @export var recipes : Array[Recipe]
-var player_save
+@export var player_save : Player_save
 
 func save_file_json(file_to_save : String, file_data):
 	var file = FileAccess.open(file_to_save, FileAccess.WRITE)
@@ -32,7 +32,6 @@ func load_resources(folder_location):
 		if ResourceLoader.exists(path):
 			var resource = ResourceLoader.load(path,"Script")
 			loaded_resources.append(resource)
-			print(resource)
 	return loaded_resources
 
 func get_all_file_paths(folder_location):
@@ -55,20 +54,29 @@ func load_resource(file_location):
 	return null
 	
 func load_player_save():
-	if FileAccess.file_exists(player_save_file):
-		var file = FileAccess.open(player_save_file, FileAccess.READ)
-		return file.get_var()
+	if ResourceLoader.exists(player_save_file):
+		var file = ResourceLoader.load(player_save_file,"Script")
+		if file is Player_save:
+			print("Is Player Save")
+			return file
+		else:
+			return create_new_save()
 	else:
-		print("New Save")
-		var new_save = load(default_player_save)
-		save_player_save(new_save)
-		return new_save
+		return create_new_save()
 		
-func save_player_save(player_save):
-	#ResourceSaver.save(player_save, player_save_file)
-	var file = FileAccess.open(player_save_file, FileAccess.WRITE)
-	file.store_var(player_save)
+func create_new_save():
+	print("New Save")
+	var new_save = ResourceLoader.load(default_player_save)
+	_save_player_save(new_save)
+	return new_save
 	
+func _save_player_save(player_save):
+	ResourceSaver.save(player_save, player_save_file)
+	#var file = FileAccess.open(player_save_file, FileAccess.WRITE)
+	#file.store_script(player_save, true)
+	
+func save_player_save():
+	ResourceSaver.save(player_save, player_save_file)
 
 #func save_character_data(data):
 	#ResourceSaver.save(data, save_path)
@@ -87,7 +95,8 @@ func _ready():
 		if recipe is Recipe:
 			recipes.append(recipe)
 	player_save = load_player_save()
-	print(compounds)
-	print(metals)
-	print(recipes)
-	print(player_save)
+
+	#print(compounds)
+	#print(metals)
+	#print(recipes)
+	#print(player_save)

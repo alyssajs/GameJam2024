@@ -21,7 +21,7 @@ offset_right = 0.151917
 offset_bottom = 0.0559254
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+mouse_filter = 2
 
 [node name="BoxContainer" type="BoxContainer" parent="Control"]
 layout_mode = 1
@@ -30,11 +30,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Panel2" type="Panel" parent="Control/BoxContainer"]
 custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hqhu2")
 
 [node name="Control" type="Control" parent="Control/BoxContainer/Panel2"]
@@ -54,6 +56,7 @@ scene_to_go_to = "res://Scenes/Main_Scenes/DoorChamber.tscn"
 custom_minimum_size = Vector2(500, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 6
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_io4c2")
 
 [node name="Label" type="Label" parent="Control/BoxContainer/Panel"]
@@ -74,6 +77,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(200, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h2jd2")
 
 [node name="Control" type="Control" parent="Control/BoxContainer/Panel3"]

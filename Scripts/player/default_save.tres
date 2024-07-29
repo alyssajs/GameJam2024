@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Player_save" load_steps=4 format=3 uid="uid://crswk37076i35"]
+
+[ext_resource type="Resource" uid="uid://d0bv5vmldpewr" path="res://Scripts/Game_Items/_compounds/acid.tres" id="1_x4xu8"]
+[ext_resource type="Resource" uid="uid://by53hkfrikxqd" path="res://Scripts/Game_Items/_metals/copper.tres" id="2_nc15y"]
+[ext_resource type="Script" path="res://Scripts/player/player_save.gd" id="3_g6rqb"]
+
+[resource]
+script = ExtResource("3_g6rqb")
+metals_unlocked = Array[Resource("res://Scripts/Game_Items/metal.gd")]([ExtResource("2_nc15y")])
+compounds_unlocked = Array[Resource("res://Scripts/Game_Items/compound.gd")]([ExtResource("1_x4xu8")])
+recipes_unlocked = Array[Resource("res://Scripts/Game_Items/recipe.gd")]([])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy1nq8lj77vom"]
+[gd_scene load_steps=13 format=3 uid="uid://cy1nq8lj77vom"]
 
 [ext_resource type="Script" path="res://Scenes/Main_Scenes/AlchemyChamber.gd" id="1_at144"]
 [ext_resource type="Texture2D" uid="uid://cxfl0g167ak8q" path="res://Assets/Art/Alchemy_Desk.png" id="1_n4xk7"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b47fto7w72r4i" path="res://Assets/Art/crucible.png" id="3_hwemh"]
 [ext_resource type="Texture2D" uid="uid://ypx1bs38mgbi" path="res://Assets/Art/flask_thing.png" id="3_ut4wx"]
 [ext_resource type="Texture2D" uid="uid://bb4pyurlnownc" path="res://Assets/Art/m_and_p.png" id="4_gtkil"]
+[ext_resource type="Theme" uid="uid://k07tdd405yu2" path="res://Themes/slidertheme.tres" id="4_nipj8"]
+[ext_resource type="Theme" uid="uid://dgqnxpaapqlip" path="res://Themes/Header_Label_Theme.tres" id="5_uv48e"]
 [ext_resource type="Texture2D" uid="uid://df68r8nq0os1e" path="res://Assets/Art/mixing_bowl.png" id="7_5u4y4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pw7y0"]
@@ -36,26 +38,11 @@ texture = ExtResource("1_n4xk7")
 [node name="Base_Ui" parent="." instance=ExtResource("3_6t0ui")]
 layer = 3
 
-[node name="Control" parent="Base_Ui" index="0"]
-mouse_filter = 2
-
-[node name="BoxContainer" parent="Base_Ui/Control" index="0"]
-mouse_filter = 2
-
-[node name="Panel2" parent="Base_Ui/Control/BoxContainer" index="0"]
-mouse_filter = 2
-
 [node name="L_Go_To_Door" parent="Base_Ui/Control/BoxContainer/Panel2/Control" index="0"]
 scene_to_go_to = "res://Scenes/Main_Scenes/DeskChamber.tscn"
 
-[node name="Panel" parent="Base_Ui/Control/BoxContainer" index="1"]
-mouse_filter = 2
-
 [node name="Label" parent="Base_Ui/Control/BoxContainer/Panel" index="0"]
 text = "Chamber Of Alchemy"
-
-[node name="Panel3" parent="Base_Ui/Control/BoxContainer" index="2"]
-mouse_filter = 2
 
 [node name="R_Go_To_Alchemy" parent="Base_Ui/Control/BoxContainer/Panel3/Control" index="0"]
 scene_to_go_to = "res://Scenes/Main_Scenes/DoorChamber.tscn"
@@ -269,6 +256,37 @@ grow_vertical = 2
 text = "Alchemize
 "
 
+[node name="cook_timer_slider" type="HSlider" parent="GameUI/Control/GridContainer/Alchemize"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = 0.518
+anchor_right = 1.0
+anchor_bottom = 0.603
+offset_left = 0.076
+offset_top = 0.743998
+offset_bottom = -0.0760131
+theme = ExtResource("4_nipj8")
+editable = false
+scrollable = false
+
+[node name="cook_label" type="Label" parent="GameUI/Control/GridContainer/Alchemize"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.408
+anchor_right = 1.0
+anchor_bottom = 0.524
+offset_left = 1.0
+offset_top = -0.136006
+offset_right = -1.0
+offset_bottom = -0.0080142
+theme = ExtResource("5_uv48e")
+theme_type_variation = &"HeaderSmall"
+theme_override_font_sizes/font_size = 24
+text = "ADD ELEMENTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Empty2" type="Panel" parent="GameUI/Control/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -298,6 +316,10 @@ texture = ExtResource("7_5u4y4")
 
 [connection signal="item_clicked" from="GameUI/Control/GridContainer/Metals/metal_list" to="." method="_on_metal_list_item_clicked"]
 [connection signal="item_selected" from="GameUI/Control/GridContainer/Metals/metal_list" to="." method="_on_metal_list_item_selected"]
+[connection signal="pressed" from="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_1/Button4" to="." method="_on_button_pressed_air"]
+[connection signal="pressed" from="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_2/Button" to="." method="_on_button_pressed_fire"]
+[connection signal="pressed" from="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_2/Button2" to="." method="_on_button_pressed_water"]
+[connection signal="pressed" from="GameUI/Control/GridContainer/Elements/Elements_Box_container/elements_p_3/Button3" to="." method="_on_button_pressed_earth"]
 [connection signal="item_clicked" from="GameUI/Control/GridContainer/Compounds/compound_list" to="." method="_on_compound_list_item_clicked"]
 [connection signal="item_selected" from="GameUI/Control/GridContainer/Compounds/compound_list" to="." method="_on_compound_list_item_selected"]
 [connection signal="pressed" from="GameUI/Control/GridContainer/Alchemize/Button" to="." method="_on_button_pressed"]

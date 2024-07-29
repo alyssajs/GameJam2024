@@ -1,7 +1,7 @@
 extends Resource
 
-class_name player_save
+class_name Player_save
 
-@export var metals_unlocked := [AlchemyEnums.Metals.COPPER]
-@export var compounds_unlocked := [Alchemy_Enums.Compounds.ACID]
-@export var recipes_unlocked := []
+@export var metals_unlocked : Array[Metal]
+@export var compounds_unlocked : Array[Compound]
+@export var recipes_unlocked : Array[Recipe]

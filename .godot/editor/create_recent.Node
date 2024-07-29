@@ -1,6 +1,7 @@
+Label
+HSlider
 Sprite2D
 Button
-Label
 Panel
 HBoxContainer
 VBoxContainer
@@ -11,4 +12,3 @@ CanvasLayer
 ParallaxBackground
 Container
 BoxContainer
-CollisionShape2D

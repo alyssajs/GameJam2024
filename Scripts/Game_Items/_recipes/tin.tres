@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://bxp3cjyx8tk75"]
+
+[ext_resource type="Resource" uid="uid://d0bv5vmldpewr" path="res://Scripts/Game_Items/_compounds/acid.tres" id="1_wbvj1"]
+[ext_resource type="Resource" uid="uid://q7w472uitotq" path="res://Scripts/Game_Items/_metals/tin.tres" id="2_2qk57"]
+[ext_resource type="Resource" uid="uid://by53hkfrikxqd" path="res://Scripts/Game_Items/_metals/copper.tres" id="2_dejkl"]
+[ext_resource type="Script" path="res://Scripts/Game_Items/recipe.gd" id="5_ldvys"]
+
+[resource]
+script = ExtResource("5_ldvys")
+recipe_name = "Tin"
+metal_output = ExtResource("2_2qk57")
+metal_input = Array[Resource("res://Scripts/Game_Items/metal.gd")]([ExtResource("2_dejkl")])
+compound_input = Array[Resource("res://Scripts/Game_Items/compound.gd")]([ExtResource("1_wbvj1")])
+element_input = Array[int]([0])
